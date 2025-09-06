@@ -15,3 +15,4 @@ binary_num = 0b1010; #二进制
 octopus_num = 0o12; #八进制
 hex_num = 0xa; # 十六进制
 print(binary_num, octopus_num, hex_num); # 10 10 10
+print(7%2)
