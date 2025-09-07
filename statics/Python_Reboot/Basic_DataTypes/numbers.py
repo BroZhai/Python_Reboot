@@ -1,3 +1,5 @@
+import math
+
 a, b, c, d = 4, 6.2, False, 4+3j; # 直接给多个变量'依次赋值'
 print(type(a), type(b), type(c), type(d));
 # a的类型 <class'int'>, b <class'float>, c <class'bool'>, d <class'complex'>
@@ -16,3 +18,24 @@ octopus_num = 0o12; #八进制
 hex_num = 0xa; # 十六进制
 print(binary_num, octopus_num, hex_num); # 10 10 10
 print(7%2)
+
+# 不同Number类之间的转换
+float_value = 11.4;
+int_value = int(float_value);
+print("int_value取得的值为:", int_value);
+
+# Number内置函数
+# abs()取绝对值, 返回的数据类型 与 输入的一致
+neg_value = -5.5;
+print("abs取到的值为: ", abs(neg_value));
+
+# round() 四舍五入
+round_value = 4.5;
+print("4.5的round四舍五入的值为: ", round(round_value));
+
+# max() / min() 取最大/最小值, 输入可以使一个 序列, 列表, 字典等...
+num_list = [4,5,1,3,8,0,7]; # max 8 , min 0
+print("num_list中最小的值为", min(num_list), ",最大的值为", max(num_list));
+
+# pow() 算指定次幂
+print(pow(2, 4)); # 16
