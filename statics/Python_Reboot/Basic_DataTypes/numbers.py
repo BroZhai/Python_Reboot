@@ -1,4 +1,4 @@
-import math
+import math, random;
 
 a, b, c, d = 4, 6.2, False, 4+3j; # 直接给多个变量'依次赋值'
 print(type(a), type(b), type(c), type(d));
@@ -41,6 +41,10 @@ print("num_list中最小的值为", min(num_list), ",最大的值为", max(num_l
 # pow() 算指定次幂
 print(pow(2, 4)); # 16
 
+# range(起始值, 终止值(不包含), 取值跨度) 直接生成'数字序列'的range对象, 需要手动进一步转成list或其他序列
+print(list(range(2,12,3))); # [2,5,8,11]
+
+
 # math库的各种方法
 print("\n以下开始为math库的实验");
 
@@ -61,4 +65,15 @@ print("2.334用modf()拆出来的元组为",math.modf(2.334)); # (0.334000...01,
 
 # sqrt(), 计算平方根
 print("⑨的平方根为",math.sqrt(9)); # 3
+
+
+# random随机库实验
+print("\以下开始为random库的实验");
+print("本次用random()生成的1-10的随机值为:", random.random()*9+1) # random()默认取值范围是[0,1), 和 random.uniform(1,10)类似, 但是uniform()的[左右两边]都可以被取
+# num_list = [4,5,1,3,8,0,7];
+print("num_list当前的内容:",num_list)
+print("从中随机抽出来的值为:", random.choice(num_list));
+random.shuffle(num_list);
+print("随机打乱后的num_list为",num_list);
+
 
