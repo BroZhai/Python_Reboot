@@ -18,3 +18,7 @@ print("%5s %-6s - %15s" % (sec_a, sec_b, sec_c));
 sec_a = "aaa";
 # print(f"{sec_a:>5} {sec_b:<6} - {sec_c:>15}")
 print("%5s %-6s - %15s" % (sec_a, sec_b, sec_c));
+
+print("%5.2f" % 3.1415); 
+
+print(f"{17:#b}");
