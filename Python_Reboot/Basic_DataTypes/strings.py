@@ -35,7 +35,7 @@ print("\n以下为'模版字符串'的实验");
 print("我是 %s, 今年 %d岁, 身高 %.2f 米" % ("Cirno",9,0.99));
 dot_precision = 4; # 定义'小数精度' (动态传入)
 print("%.*f" % (dot_precision, 3.141592535)); # 保留四位小数舍入, 3.1416
-# %0数字, 申明这里的'几位数', 没数的地方为
+# %0数字, 申明这里的'几位数', 没数的地方被'0'填充
 print("定义'五位数': %05d" % (8)); # 00008
 print("定义'五位数': %05d" % (214)); # 00214
 
@@ -58,11 +58,26 @@ print("%5s %-6s | %-15s" % (sec_a, sec_b, sec_c));
 
 print("%+d, %+d" % (18, -9)) # %+ 给数字带上正负符号
 print("十进制数字%d对应的十六进制数为%#x" % (102, 102));
-"""
 
-print("%5.2f" % 3.1415); 
+## String的内置常用方法
+print("\n以下为String中的'内置方法'实验: ")
+print("sec_a当前的长度为:", len(sec_a)); # 3
+print("sec_a.upper()大写:", sec_a.upper()); # AAA
+print("sec_a.capitalize()首字母大写:", sec_a.capitalize()); # Aaa
+sec_a = "   aaa "
+print("修改后的sec_a为%s, .strip()后的结果为%s" % (sec_a, sec_a.strip())); # '   aaa ', 'aaa'
+split_symbol = "||";
+complex_string = "bibi||lailai||chaochaobei";
+print(complex_string.split(sep=split_symbol, maxsplit=-1)); # "有分隔符"字符串 -> 列表
 
-print(f"{17:#b}");
+str_list = complex_string.split(sep=split_symbol, maxsplit=-1)
+join_result = split_symbol.join(str_list);
+print("使用'||'作为主体split(str_list列表)的结果为:",join_result); # 列表 -> 带'分隔符'的字符串
 
-print("i am sussy baka".title())
-"""
+print(complex_string.find("lai")); # 6, 找到了'lai', 首字母l的起始下标为6
+print(complex_string.find("le")); # 找不到'le', 返回 -1
+# print(complex_string.index("lai")); # 使用和 find()一样, 但是找不到时会抛出ValueError异常
+print("complex_string中, 'i'一共出现了%d次" % complex_string.count("i"));
+print("complex_string.replace()的结果为:",complex_string.replace("bei","bing"), ""); # 替换并返回"新字符串", 不会对'原字符串'修改操作
+print("complex_string仍以bei结尾吗?", complex_string.endswith("bei")); # True
+print("complex_string中是字母 或 数字的组合吗",complex_string.isalnum()); # False, 因为包含了特殊符号 '|'
