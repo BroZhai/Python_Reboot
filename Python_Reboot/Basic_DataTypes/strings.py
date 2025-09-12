@@ -1,7 +1,11 @@
 # 准备研究下String
-## 研究string的索引操作
+## 研究string的'运算符'
 greet_str = "Ciallo~";
 print("greet_str取到最后一位前的字符为:", greet_str[0:-1]); # "~"为最后一位, 取不到
+print("greet_str的最后一位为:", greet_str[-1]);
+morning_str = "G"+"o"*8+"d morning!"; 
+print(morning_str);
+print("D" in morning_str, "d" in morning_str); # False,True morning_str中并没有"D", 但是有"d" (区分大小写)
 
 ## \ 各种转义字符
 print("\n各种转义字符实验:")
@@ -25,6 +29,8 @@ print("Kleery\t9\tFemboy")
 print("\nHello~\rCia"); # Cialo~
 print("八进制Ascii输出: \102\141\153\141"); # Baka
 print("十六进制Ascii输出: \x43\x69\x72\x6e\x6f"); # Cirno
+
+
 """
 print("%05d" % 14);
 
