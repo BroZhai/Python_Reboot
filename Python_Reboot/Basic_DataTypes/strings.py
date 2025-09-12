@@ -30,27 +30,35 @@ print("\nHello~\rCia"); # Cialo~
 print("八进制Ascii输出: \102\141\153\141"); # Baka
 print("十六进制Ascii输出: \x43\x69\x72\x6e\x6f"); # Cirno
 
+## %模版字符串 (这里只实验常用的%s, %d, %f), 用法和C中的printf基本一致
+print("\n以下为'模版字符串'的实验");
+print("我是 %s, 今年 %d岁, 身高 %.2f 米" % ("Cirno",9,0.99));
+dot_precision = 4; # 定义'小数精度' (动态传入)
+print("%.*f" % (dot_precision, 3.141592535)); # 保留四位小数舍入, 3.1416
+# %0数字, 申明这里的'几位数', 没数的地方为
+print("定义'五位数': %05d" % (8)); # 00008
+print("定义'五位数': %05d" % (214)); # 00214
 
-"""
-print("%05d" % 14);
-
+# %数字, '预留显示位', 将字符串自己分成不同的'区', 定义每个'区'的大小, 规整输出
 sec_a = "aaaaaa"; # 6个a
 sec_b = "bbb";
 sec_c = "ccccccc";
 
-# sec_a'预留显示位'为5, 靠右对齐; 
-# sec_b则是6个'字符位', 靠左对齐; 
+# sec_a'预留显示位'为5, 靠右对齐(Python默认); 
+# sec_b则是6个'字符位', 靠左对齐(%- 实现'左对齐'); 
 # sec_c是15个'字符位', 靠右对齐;
-print("%5s %-6s - %15s" % (sec_a, sec_b, sec_c));
-# print(f"{sec_a:>5} {sec_b:<6} - {sec_c:>15}") # 发现有一个'多出来'的a (超'预留显示位'了)
+print("%5s %-6s | %15s" % (sec_a, sec_b, sec_c)); # 发现有一个'多出来'的a (超'预留显示位'了)
+# print(f"{sec_a:>5} {sec_b:<6} - {sec_c:>15}") # f-string也能做, 一会儿开个f-string工程单独实验
 
-sec_a = "aaaaa";
-# print(f"{sec_a:>5} {sec_b:<6} - {sec_c:>15}")
-print("%5s %-6s - %15s" % (sec_a, sec_b, sec_c));
+sec_a = "aaaaa"; #a区5个字
+print("%5s %-6s | %15s" % (sec_a, sec_b, sec_c));
 
-sec_a = "aaa";
-# print(f"{sec_a:>5} {sec_b:<6} - {sec_c:>15}")
-print("%5s %-6s - %15s" % (sec_a, sec_b, sec_c));
+sec_a = "aaa"; #a区3个字, c区变成'靠左对齐'
+print("%5s %-6s | %-15s" % (sec_a, sec_b, sec_c));
+
+print("%+d, %+d" % (18, -9)) # %+ 给数字带上正负符号
+print("十进制数字%d对应的十六进制数为%#x" % (102, 102));
+"""
 
 print("%5.2f" % 3.1415); 
 
