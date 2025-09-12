@@ -3,7 +3,6 @@
 greet_str = "Ciallo~";
 print("greet_str取到最后一位前的字符为:", greet_str[0:-1]); # "~"为最后一位, 取不到
 
-
 ## \ 各种转义字符
 print("\n各种转义字符实验:")
 muliti_line_str = "第一行,\
@@ -18,10 +17,14 @@ print("我是大啥\b比\b聪明"); # 注: 此行在Vscode等IDE中运行时可�
 print("你知道嘛\n我换行了owo"); # 换行
 print("\000"); # 这一行什么东西都没有
 
-print("Username\tAge\tSex");
+print("Name\tAge\tSex");
 print("Tekon\t32\tMale");
+print("IceWing\t28\tFemale");
+print("Kleery\t9\tFemboy")
 
-
+print("\nHello~\rCia"); # Cialo~
+print("八进制Ascii输出: \102\141\153\141"); # Baka
+print("十六进制Ascii输出: \x43\x69\x72\x6e\x6f"); # Cirno
 """
 print("%05d" % 14);
 
