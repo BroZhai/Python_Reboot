@@ -25,5 +25,6 @@ mix_tuple = num_tuple + letter_tuple;
 print(f"混合的mix_tuple为:{mix_tuple}");
 
 ## 元组的一些内置方法
-print(f"mix_tuple的长度为{len(mix_tuple)}"); # 4
-print(f"其中最大的元素为{max(mix_tuple)}, 最小的元素为{min(tuple)}"); # 2, 1
+pure_num_tuple = (5,3,1,6,9,7)
+print(f"pure_num_tuple的长度为{len(pure_num_tuple)}"); # 6
+print(f"其中最大的元素为{max(pure_num_tuple)}, 最小的元素为{min(pure_num_tuple)}"); # 9, 1
