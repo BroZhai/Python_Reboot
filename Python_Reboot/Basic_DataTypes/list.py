@@ -43,7 +43,9 @@ tup_to_list.clear();
 print(f"使用.clear()对tup_to_list的所有内容进行了清空: {tup_to_list}")
 
 origin_list = [1,2,[3,4]];
-copied_list = origin_list.copy();
+copied_list = origin_list.copy(); # 创建一个元素的'浅拷贝'
+# Python中的'浅拷贝'逻辑: 顶层(第一层数据)独立, 嵌套(第二层+数据)共享
 print(f"现有origin_list:{origin_list}, 复制的copied_list:{copied_list}");
-copied_list[0] = 5;
-print(f"修改copied_list中的第一个元素: {copied_list}, orgin_list的内容: {copied_list}");
+copied_list[0] = 5; # 只会修改copied_list中的值 (顶层元素)
+copied_list[2][1] = 9; # copied_list 和 origin_list 都会被修改, 因为该元素是一个'嵌套元素'(共享)
+print(f"修改copied_list中的第一个元素: {copied_list}, origin_list的内容: {origin_list}");
